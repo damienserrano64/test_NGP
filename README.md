@@ -5,7 +5,7 @@
 To run the project you have to open the "test" folder on visual studio code
 make sure that nodejs is installed on your computer
 Then you open a Terminal and install all the features by writing thos commands : 
-npm intall vue
+npm install vue
 npm install vuetify
 npm install chartjs
 npm install axios
