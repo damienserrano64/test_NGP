@@ -1,29 +1,29 @@
 <template>
-<v-app>
-  <v-main>
-  <div>
-    <my-chart v-if="dateTab !== []" :chartdate="dateTab" :chartprice="priceTab"></my-chart>
-    <my-data-table :dataTabledata="dataObj"></my-data-table>
-  </div>
-  </v-main>
-</v-app>
+  <v-app>
+    <v-main>
+      <div>
+        <my-chart v-if="dateTab.length != 0 && priceTab.length != 0" :chartdate="dateTab" :chartprice="priceTab"></my-chart>
+        <my-data-table v-if="dataObj.length != 0" :dataTabledata="dataObj"></my-data-table>
+      </div>
+    </v-main>
+  </v-app>
 </template>
 <script>
 import axios from "axios";
-import myDataTable from './components/mydataTable.vue';
-import myChart from './components/mychart.vue'
+import myDataTable from "./components/mydataTable.vue";
+import myChart from "./components/mychart.vue";
 
 export default {
-  data(){
+  data() {
     return {
       dateTab: [],
       priceTab: [],
       dataObj: [],
-    }
+    };
   },
-  components:  {
-    'my-chart' : myChart,
-    'my-data-table' : myDataTable
+  components: {
+    "my-chart": myChart,
+    "my-data-table": myDataTable
   },
   mounted() {
     axios
@@ -54,10 +54,8 @@ export default {
       .catch((error) => {
         console.log(error);
       });
-  }
-
-}
+  },
+};
 </script>
 <style>
-
 </style>

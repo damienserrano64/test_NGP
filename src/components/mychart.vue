@@ -2,14 +2,14 @@
   <div class="draggable">
     <div class="dragger"></div>
     <canvas id="price-chart" height="150" weight="100"></canvas>
-    </div>
+  </div>
 </template>
 <script>
 import Chart from "chart.js";
 
 export default {
   props: [
-    "chartdate",
+    "chartdate", 
     "chartprice"
   ],
   mounted() {

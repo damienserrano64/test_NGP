@@ -1,32 +1,32 @@
 <template>
-      <v-card>
-        <v-card-title class="vcardtitle">
-          Bitcoin Price
-          <v-spacer></v-spacer>
-          <v-text-field class="vtextfield"
-            v-model="search"
-            append-icon="mdi-magnify"
-            label="Search"
-            single-line
-            hide-details
-          ></v-text-field>
-        </v-card-title>
-        <v-data-table
-          id="data-table"
-          :headers="headers"
-          :items="datas"
-          :search="search"
-          :footer-props="{
-            'items-per-page-options': [10, 20, 30, 40, 50, -1],
-          }"
-        ></v-data-table>
-      </v-card>
+  <v-card>
+    <v-card-title class="vcardtitle">
+      Bitcoin Price
+      <v-spacer></v-spacer>
+      <v-text-field
+        class="vtextfield"
+        v-model="search"
+        append-icon="mdi-magnify"
+        label="Search"
+        single-line
+        hide-details
+      ></v-text-field>
+    </v-card-title>
+    <v-data-table
+      id="data-table"
+      :headers="headers"
+      :items="datas"
+      :search="search"
+      :footer-props="{
+        'items-per-page-options': [10, 20, 30, 40, 50, -1],
+      }"
+    ></v-data-table>
+  </v-card>
 </template>
 <script>
-
-export default {  
+export default {
   props: [
-      'dataTabledata' 
+    "dataTabledata"
   ],
   data() {
     return {
@@ -38,17 +38,17 @@ export default {
       datas: [],
     };
   },
-  mounted(){
-      this.datas = this.dataTabledata;
-    }   
+  mounted() {
+    this.datas = this.dataTabledata;
+  },
 };
 </script>
 <style>
-.vcardtitle{
-  color: #27367A;
+.vcardtitle {
+  color: #27367a;
 }
 
 element.style {
-  color: #27367A;
+  color: #27367a;
 }
 </style>
